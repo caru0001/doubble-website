@@ -1,0 +1,37 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/images/doubblelogo.svg";
+---
+
+<section class="bg-afterhours-500 text-pillowtalk-500 font-bold">
+  <div x-data="{ showmenu: false }" class="py-4 px-16 static md:static w-full">
+    <div id="navbar" class="flex flex-row items-center justify-between">
+      <div id="logo">
+        <a href="#hero"><Image src={logo} alt="pizza party" class="w-auto h-6" /></a>
+      </div>
+      <nav id="desktopmenu" class="hidden md:block">
+        <ul class="flex flex-row gap-12 font-medium">
+          <li class=""><a href="#data">Vision</a></li>
+          <li class=""><a href="#chapters">Blog</a></li>
+          <li class=""><a href="#author">Events</a></li>
+          <li class=""><a href="#buy">EN</a></li>
+        </ul>
+      </nav>
+      <button id="burgermenu" class="md:hidden mr-4" x-on:click="showmenu = ! showmenu"
+        ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+        </svg>
+      </button>
+    </div>
+<!-- Mobile menu -->
+    <nav id="mobilemenu" class="flex flex-col content-center pt-4 pr-4" x-show="showmenu" x-transition x-on:click="showmenu = false" x-on:click.outside="showmenu = false">
+      <ul>
+        <li class="text-right py-2"><a href="#data">Vision</a></li>
+        <li class="text-right py-2"><a href="#chapters">Blog</a></li>
+        <li class="text-right py-2"><a href="#author">Events</a></li>
+        <li class="text-right py-2"><a href="#buy">EN</a></li>
+      </ul>
+    </nav>
+  </div>
+</section>
+
