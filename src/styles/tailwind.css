@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/typography';
+@plugin '@tailwindcss/forms';
+
+
+@font-face {
+  font-family:"Cera Pro";
+  src: url("/assets/fonts/cerapro/cera-pro-regular-webfont.woff2") format("woff2"), url("/assets/fonts/cerapro/cera-pro-bold-webfont.woff2") format("woff2");
+  font-weight: 400 700;
+}
+
+@theme {
+  /* Fonts */
+  --font-cera: "Cera Pro";
+  --font-montserrat: "Montserrat", sans-serif;
+
+  /*Font sizes - clamp credit:@link https://utopia.fyi/clamp/calculator?a=320,1240,72—132&p=text*/
+  --text-display: clamp(4.5rem, 3.1957rem + 6.5217vw, 8.25rem);
+  --text-display--line-height: clamp(4rem, 2.913rem + 5.4348vw, 7.125rem);
+  --text-heading1: clamp(3.5rem, 2.7609rem + 3.6957vw, 5.625rem);
+  --text-heading1--line-height: clamp(3.5rem, 2.9783rem + 2.6087vw, 5rem);
+  --text-heading2: clamp(2.5rem, 2.1957rem + 1.5217vw, 3.375rem);
+  --text-heading2--line-height: clamp(2.625rem, 2.1467rem + 2.3913vw, 4rem);
+  --text-heading3: clamp(2rem, 1.7826rem + 1.087vw, 2.625rem);
+  --text-heading4: clamp(1.5rem, 1.3261rem + 0.8696vw, 2rem);
+  --text-body: clamp(1rem, 0.8696rem + 0.6522vw, 1.375rem); /* 16 <-> 22px */
+
+
+  /* Colour: pillow talk */
+  --color-pillowtalk-50: #fdfdfc;
+  --color-pillowtalk-100: #fdfdfc;
+  --color-pillowtalk-200: #fdfdfc;
+  --color-pillowtalk-300: #fbfbf8;
+  --color-pillowtalk-400: #faf9f5;
+  --color-pillowtalk-500: #f9f8f4;
+  --color-pillowtalk-600: #e6e2d1;
+  --color-pillowtalk-700: #cec6a6;
+  --color-pillowtalk-800: #b2a571;
+  --color-pillowtalk-900: #847848;
+  --color-pillowtalk-950: #5c5432;
+  /*Colour: after hours*/
+  --color-afterhours-50: #e8e8e8;
+  --color-afterhours-100: #d1d1d1;
+  --color-afterhours-200: #a6a6a6;
+  --color-afterhours-300: #787878;
+  --color-afterhours-400: #4a4a4a;
+  --color-afterhours-500: #1e1e1e;
+  --color-afterhours-600: #171717;
+  --color-afterhours-700: #121212;
+  --color-afterhours-800: #0d0d0d;
+  --color-afterhours-900: #050505;
+  --color-afterhours-950: #030303;
+  /*Colour: first kiss*/
+  --color-firstkiss-50: #fffafe;
+  --color-firstkiss-100: #fffafe;
+  --color-firstkiss-200: #fef5fd;
+  --color-firstkiss-300: #feecfb;
+  --color-firstkiss-400: #fde7fa;
+  --color-firstkiss-500: #fde2f9;
+  --color-firstkiss-600: #f788e6;
+  --color-firstkiss-700: #f12dd3;
+  --color-firstkiss-800: #b50d9c;
+  --color-firstkiss-900: #5b064e;
+  --color-firstkiss-950: #2b0325;
+  /*Colour: green flag*/
+  --color-greenflag-50: #fbfff0;
+  --color-greenflag-100: #f8ffe5;
+  --color-greenflag-200: #f1ffcc;
+  --color-greenflag-300: #e9ffad;
+  --color-greenflag-400: #e2ff94;
+  --color-greenflag-500: #dcff7b;
+  --color-greenflag-600: #c7ff2e;
+  --color-greenflag-700: #a5e000;
+  --color-greenflag-800: #709900;
+  --color-greenflag-900: #384d00;
+  --color-greenflag-950: #1a2400;
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@layer components{
+
+}
+@layer utilities{
+  
+}
