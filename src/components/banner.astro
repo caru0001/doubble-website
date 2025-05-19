@@ -1,12 +1,20 @@
 ---
 import { Image } from "astro:assets";
 import scrollpic2 from "../assets/images/awkward2.png";
+import Button from "../components/button.astro";
+import googleicon from "../assets/images/googleplay-icon-light.svg";
+import appleicon from "../assets/images/apple-icon-light.svg";
 ---
 
-<section class="bg-greenflag-500 text-afterhours-500 grid grid-cols-2">
-  <div class="py-16 pl-16">
-    <h2 class="font-montserrat text-heading2 font-extrabold tracking-tighter pb-12">never miss out on a doubble date.</h2>
-    <p>download the Doubble app now</p>
+<section class="bg-greenflag-500 text-afterhours-500 md:grid md:grid-cols-2 md:gap-8">
+  <div class="py-10 pl-16">
+    <h2 class="font-montserrat text-heading3 font-extrabold tracking-tighter pb-6 max-w-xl">never miss out on a doubble date.</h2>
+    <p class="pb-6">download the Doubble app now.</p>
+    <div class="flex gap-6">
+      <Button variant="secondary"> <span class="flex items-center gap-2"><Image src={googleicon} alt="google play icon" />App Store</span></Button>
+
+      <Button variant="secondary"><span class="flex items-center gap-2"><Image src={appleicon} alt="apple icon" />Google Play</span> </Button>
+    </div>
   </div>
-  <div><Image src={scrollpic2} alt="pizza party" class="py-0" /></div>
+  <div class="hidden md:block"><Image src={scrollpic2} alt="pizza party" class="py-0" /></div>
 </section>

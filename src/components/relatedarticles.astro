@@ -1,0 +1,14 @@
+---
+import { Image } from "astro:assets";
+import scrollpic2 from "../assets/images/awkward2.png";
+---
+
+<section class="bg-pillowtalk-500 text-afterhours-500 py-16 px-16">
+  <h2 class="font-montserrat text-heading2 font-extrabold tracking-tighter pb-4">related articles.</h2>
+  <p class="max-w-xl text-pretty pb-12">want more gossip?</p>
+  <article class="md:grid md:grid-cols-3 gap-6">
+    <div><Image src={scrollpic2} alt="pizza party" class="rounded-3xl" /><p>why you should never date alone again</p></div>
+    <div><Image src={scrollpic2} alt="pizza party" class="rounded-3xl" /><p>from coffee dates to group nights out</p></div>
+    <div><Image src={scrollpic2} alt="pizza party" class="rounded-3xl" /><p>what you can do about date jitters</p></div>
+  </article>
+</section>
