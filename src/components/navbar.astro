@@ -14,7 +14,7 @@ import logo from "../assets/images/doubblelogo.svg";
           <li class=""><a href="/vision">Vision</a></li>
           <li class=""><a href="/blog">Blog</a></li>
           <li class=""><a href="/eventsarticle">Events</a></li>
-          <li class=""><a href="#buy">EN</a></li>
+          <li class=""><a href="#">EN</a></li>
         </ul>
       </nav>
       <button id="burgermenu" class="md:hidden mr-4" x-on:click="showmenu = ! showmenu"
@@ -26,10 +26,10 @@ import logo from "../assets/images/doubblelogo.svg";
 <!-- Mobile menu -->
     <nav id="mobilemenu" class="flex flex-col content-center pt-4 pr-4" x-show="showmenu" x-transition x-on:click="showmenu = false" x-on:click.outside="showmenu = false">
       <ul>
-        <li class="text-right py-2"><a href="#data">Vision</a></li>
-        <li class="text-right py-2"><a href="#chapters">Blog</a></li>
-        <li class="text-right py-2"><a href="#author">Events</a></li>
-        <li class="text-right py-2"><a href="#buy">EN</a></li>
+        <li class="text-right py-2"><a href="/vision">Vision</a></li>
+        <li class="text-right py-2"><a href="/blog">Blog</a></li>
+        <li class="text-right py-2"><a href="/eventsarticle">Events</a></li>
+        <li class="text-right py-2"><a href="#">EN</a></li>
       </ul>
     </nav>
   </div>
