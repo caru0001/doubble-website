@@ -1,0 +1,20 @@
+---
+// getting parameters from Astro.props
+const { variant = "primary" } = Astro.props;
+
+// Stylling for all buttons
+const buttonStyling = "px-6 py-3 rounded-3xl drop-shadow-lg font-medium transition duration-300";
+
+// Stylings for variants
+const variantClasses = {
+  primary: "bg-firstkiss-500 hover:bg-firstkiss-300 text-afterhours-500",
+  secondary: "bg-afterhours-500 hover:bg-afterhours-400 text-pillowtalk-500",
+  subprimary: "bg-none hover:bg-firstkiss-500 text-firstkiss-500 hover:text-afterhours-500 border-2 border-firstkiss-500",
+};
+
+---
+
+<!-- Sæt classes for den pågældende knap sammen ved hjælp af Astros class:list -->
+<button class:list={[buttonStyling, variantClasses[variant],]}>
+  <slot />
+</button>
