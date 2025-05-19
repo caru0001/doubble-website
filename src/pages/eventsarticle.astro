@@ -1,11 +1,22 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import Eventscards from "../components/eventscards.astro";
+import Textboxescontainer from "../components/textboxescontainer.astro";
+import Parallaxgraphics from "../components/parallaxgraphicscontainer.astro";
+import Number from "../components/number.astro";
+import Quote from "../components/quote.astro";
 ---
 
 <MainLayout title="doubble events article">
-  <section id="eventsarticle" class="text-pillowtalk-500 p-16">
+  <section id="eventshero" class="text-pillowtalk-500 p-16">
     <h1 class="font-montserrat text-display font-extrabold tracking-tighter pb-12">finally, <span class="italic text-firstkiss-500 font-light">Doubble Events</span> are here.</h1>
     <p class="max-w-xl pb-2">say goodbye to flaky group chats and “what’s the plan?” stress and hello to Doubble Events. where real plans actually happen.</p>
     <p class="max-w-xl">just scroll, tap, and show up.</p>
   </section>
+  <Eventscards />
+  <Textboxescontainer />
+  <Parallaxgraphics />
+  <Number />
+  <Textboxescontainer />
+  <Quote />
 </MainLayout>
