@@ -4,7 +4,7 @@ import logo from "../assets/images/doubblelogo.svg";
 ---
 
 <section class="bg-afterhours-500 text-pillowtalk-500 font-bold">
-  <div x-data="{ showmenu: false }" class="py-4 px-16 static md:static w-full">
+  <div x-data="{ showmenu: false }" class="py-4 px-4 md:px-16 static md:static w-full">
     <div id="navbar" class="flex flex-row items-center justify-between">
       <div id="logo">
         <a href="/"><Image src={logo} alt="pizza party" class="w-auto h-6" /></a>
@@ -23,15 +23,14 @@ import logo from "../assets/images/doubblelogo.svg";
         </svg>
       </button>
     </div>
-<!-- Mobile menu -->
+    <!-- Mobile menu -->
     <nav id="mobilemenu" class="flex flex-col content-center pt-4 pr-4" x-show="showmenu" x-transition x-on:click="showmenu = false" x-on:click.outside="showmenu = false">
       <ul>
-        <li class="text-right py-2"><a href="/vision">Vision</a></li>
-        <li class="text-right py-2"><a href="/blog">Blog</a></li>
-        <li class="text-right py-2"><a href="/eventsarticle">Events</a></li>
-        <li class="text-right py-2"><a href="#">EN</a></li>
+        <li class="text-right py-3"><a href="/vision">Vision</a></li>
+        <li class="text-right py-3"><a href="/blog">Blog</a></li>
+        <li class="text-right py-3"><a href="/eventsarticle">Events</a></li>
+        <li class="text-right py-3"><a href="#">EN</a></li>
       </ul>
     </nav>
   </div>
 </section>
-
