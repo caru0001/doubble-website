@@ -19,7 +19,7 @@ const { title } = Astro.props;
       <Navbar />
     </header>
 
-    <main>
+    <main class="scroll-smooth">
       <slot />
     </main>
 
@@ -28,3 +28,10 @@ const { title } = Astro.props;
     </footer>
   </body>
 </html>
+
+<script>
+  import { animate } from "motion";
+
+  // Entrance animation for whole website
+  animate("body", { opacity: [0, 1] }, { duration: 1 });
+</script>

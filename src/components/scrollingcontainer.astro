@@ -5,10 +5,55 @@ import scrollpic2 from "../assets/images/awkward2.png";
 import scrollpic3 from "../assets/images/awkward3.png";
 ---
 
-<section class="bg-pillowtalk-500 text-afterhours-500 py-16">
+<section id="scrollingcontainer" class="bg-pillowtalk-500 text-afterhours-500 py-16">
   <article class="max-w-7xl mx-auto px-4 md:px-16">
-    <h2 class="font-montserrat text-heading2 font-extrabold tracking-tighter text-afterhours-500 pb-12">do you want another awkward dating app?</h2>
-    <div class="md:grid md:grid-cols-3 gap-6"><Image src={scrollpic1} alt="young people hanging out in a car" class="rounded-3xl" /><Image src={scrollpic2} alt=" two people having a pizza party" class="rounded-3xl" /><Image src={scrollpic3} alt="two girls dancing" class="rounded-3xl" /></div>
-    <h2 class="font-montserrat text-heading2 font-extrabold tracking-tighter text-afterhours-500 pt-12 text-right">then doubble is <span class="italic font-light">not</span> for you</h2>
+    <h2 class="font-montserrat text-heading2 font-extrabold tracking-tighter text-afterhours-500 pb-8 md:pb-12 textanimationright">do you want another awkward dating app?</h2>
+
+    <div class="overflow-clip">
+      <article id="horisontalscrollsection" class="h-[300vw]">
+        <ul id="horisontalscrollitems" class="list-none pl-0 flex sticky top-[10vh]">
+          <li class="pl-0 pr-4 flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto">
+            <figure class="flex flex-row"><Image src={scrollpic1} alt="young people hanging out in a car" class="rounded-3xl" /></figure>
+          </li>
+          <li class="pl-0 pr-4 flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto">
+            <figure class="flex flex-row"><Image src={scrollpic2} alt=" two people having a pizza party" class="rounded-3xl" /></figure>
+          </li>
+          <li class="pl-0 flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto">
+            <figure class="flex flex-row"><Image src={scrollpic3} alt="two girls dancing" class="rounded-3xl" /></figure>
+          </li>
+        </ul>
+      </article>
+    </div>
+
+    <h2 class="font-montserrat text-heading2 font-extrabold tracking-tighter text-afterhours-500 pt-12 text-right textanimationleft">then doubble is <span class="italic font-light">not</span> for you</h2>
   </article>
 </section>
+
+<script>
+  /* Importing from Motion One library */
+  import { animate, inView, scroll } from "motion";
+
+  /* Horisontal scroll */
+  scroll(
+    animate("#horisontalscrollitems", {
+      transform: ["none", "translateX(-300vw)"],
+    }),
+    { target: document.querySelector("#horisontalscrollsection") }
+  );
+
+  /* Inview animation from right + return */
+  inView(".textanimationright", () => {
+    animate(".textanimationright", { x: [150, 0], opacity: [0, 1] }, { duration: 1.5, easing: "ease-out" });
+    return () => {
+      animate(".textanimationright", { x: [0] });
+    };
+  });
+
+  /* Inview animation from left + return */
+  inView(".textanimationleft", () => {
+    animate(".textanimationleft", { x: [-150, 0], opacity: [0, 1] }, { duration: 1.5, easing: "ease-out" });
+    return () => {
+      animate(".textanimationleft", { x: [0] });
+    };
+  });
+</script>
