@@ -4,13 +4,15 @@ import scrollpic2 from "../assets/images/awkward2.png";
 import Button from "../components/button.astro";
 ---
 
-<section class="text-pillowtalk-500 md:grid md:grid-cols-2 py-16 px-4 md:px-16">
-  <div class="max-w-xl text-pretty">
-    <h2 class="font-montserrat text-heading2 font-extrabold tracking-tighter pb-12">not another solo dating app.</h2>
-    <p class="pb-6">we started Doubble, because we believe you're the best version of yourself, when you're with your friends.</p>
-    <p class="pb-6">the group chat flows more easily, when you're four people. it feels more comfortable having your friend with you. aaand it's just more fun.</p>
-    <p class="pb-8">enough talking. go try it out yourself 🍀</p>
-    <Button variant="tertiary">download app</Button>
-  </div>
-  <div><Image src={scrollpic2} alt="pizza party" class="rounded-3xl" /></div>
+<section class="text-pillowtalk-500 py-16 px-4 md:px-16">
+  <article class="max-w-7xl md:grid md:grid-cols-2 gap-16">
+    <div>
+      <h2 class="font-montserrat text-heading2 font-extrabold tracking-tighter pb-12 animationinviewfade">not another solo dating app.</h2>
+      <p class="pb-6 animationinviewfade">we started Doubble, because we believe you're the best version of yourself, when you're with your friends.</p>
+      <p class="pb-6 animationinviewfade">the group chat flows more easily, when you're four people. it feels more comfortable having your friend with you. aaand it's just more fun.</p>
+      <p class="pb-8 animationinviewfade">enough talking. go try it out yourself 🍀</p>
+      <Button variant="tertiary">download app</Button>
+    </div>
+    <div class="pt-8 md:pt-0"><Image src={scrollpic2} alt="pizza party" class="rounded-3xl" /></div>
+  </article>
 </section>

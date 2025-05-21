@@ -30,8 +30,17 @@ const { title } = Astro.props;
 </html>
 
 <script>
-  import { animate } from "motion";
+  import { animate, inView } from "motion";
 
   // Entrance animation for whole website
   animate("body", { opacity: [0, 1] }, { duration: 1 });
+
+  /* Animation for text fade in*/
+  inView(".animationinviewfade", (element) => {
+    animate(element, { opacity: [0, 1] }, { duration: 1.5 });
+
+    return () => {
+      animate(element, { opacity: [1, 0] }, { duration: 1.5 });
+    };
+  });
 </script>
