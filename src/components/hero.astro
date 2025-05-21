@@ -5,13 +5,27 @@ import appleicon from "../assets/images/apple-icon-dark.svg";
 import Button from "../components/button.astro";
 ---
 
-<section id="hero" class="bg-[url('../assets/images/mobilehero.png')] md:bg-[url('../assets/images/desktophero.png')] bg-cover bg-center h-auto py-12 md:py-16">
-  <article class="max-w-7xl mx-auto px-4 md:px-16">
-    <h1 class="font-montserrat text-display font-extrabold tracking-tighter text-greenflag-500 text-center pb-48 md:pb-32">doubble dates are <span class="italic font-light">doubble</span> the fun</h1>
-    <p class="text-pillowtalk-500 text-bodymobilehero md:text-body font-bold text-center pb-6">start the adventure on the app</p>
-    <div class="flex flex-col md:flex-row gap-4 md:gap-6 items-center justify-center">
-      <Button variant="primary"><span class="flex items-center gap-2"><Image src={googleicon} alt="google play icon" />App Store</span></Button>
-      <Button variant="primary"><span class="flex items-center gap-2"><Image src={appleicon} alt="apple icon" />Google Play</span> </Button>
+<section id="hero" class="bg-[url('../assets/images/mobilehero.png')] md:bg-[url('../assets/images/desktophero.png')] bg-cover bg-center h-[844px] md:h-[1024px] py-12 md:py-16">
+  <article class="max-w-7xl mx-auto px-4 md:px-16 flex flex-col justify-between h-full">
+    <h1 class="font-montserrat text-display font-extrabold tracking-tighter text-greenflag-500 text-center animationinviewfade">doubble dates are <span class="italic font-light">doubble</span> the fun</h1>
+    <div>
+      <p class="text-pillowtalk-500 text-bodymobilehero md:text-body font-bold text-center pb-6">start the adventure on the app</p>
+      <div class="flex flex-col md:flex-row gap-4 md:gap-6 items-center justify-center">
+        <Button variant="primary"><span class="flex items-center gap-2"><Image src={googleicon} alt="google play icon" />App Store</span></Button>
+        <Button variant="primary"><span class="flex items-center gap-2"><Image src={appleicon} alt="apple icon" />Google Play</span> </Button>
+      </div>
     </div>
   </article>
 </section>
+
+<script>
+  /* Importing from Motion One library */
+  import { animate, inView, scroll } from "motion";
+
+  inView(".animationinviewfade", () => {
+    animate(".animationinviewfade", { opacity: [0, 1] }, { duration: 2 });
+    return () => {
+      animate(".animationinviewfade", { opacity: [0] });
+    };
+  });
+</script>
