@@ -35,7 +35,7 @@ import scrollpic3 from "../assets/images/awkward3.png";
 
   /* Inview animation from right + return */
   inView(".textanimationright", (element) => {
-    animate(element, { x: [150, 0], opacity: [0, 1] }, { duration: 1.5 });
+    animate(element, { x: [100, 0], opacity: [0, 1] }, { duration: 1.5 });
     return () => {
       animate(element, { x: [0], opacity: [0] });
     };
@@ -43,7 +43,7 @@ import scrollpic3 from "../assets/images/awkward3.png";
 
   /* Inview animation from left + return */
   inView(".textanimationleft", (element) => {
-    animate(element, { x: [-150, 0], opacity: [0, 1] }, { duration: 1.5 });
+    animate(element, { x: [-100, 0], opacity: [0, 1] }, { duration: 1.5 });
     return () => {
       animate(element, { x: [0], opacity: [0] });
     };

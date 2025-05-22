@@ -12,7 +12,9 @@ import Button from "../components/button.astro";
       <p class="pb-4 md:pb-6 animationinviewfade">introducing Doubble events, because meeting people should feel like making plans with friends — not scrolling through strangers.</p>
       <p class="pb-4 md:pb-6 animationinviewfade">the vibe clicks faster when you're already going out as a group. it’s easier to chat. aaand it’s way more fun.</p>
       <p class="pb-8 md:pb-10 animationinviewfade">enough talking. check out what’s happening.</p>
-      <Button variant="tertiary">read about events</Button>
+      <a href="/eventsarticle" class="flex items-center justify-center md:justify-start">
+        <Button variant="tertiary">read about events</Button>
+      </a>
     </div>
     <div class="hidden md:block pt-8 md:pt-0"><Image src={media} alt="girl at a party in a lavendar top" class="rounded-3xl h-full object-cover" /></div>
   </article>
