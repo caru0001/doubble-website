@@ -1,18 +1,19 @@
 ---
 import { Image } from "astro:assets";
-import scrollpic2 from "../assets/images/awkward2.png";
+import media from "../assets/images/media.png";
 import Button from "../components/button.astro";
 ---
 
-<section class="text-pillowtalk-500 py-16 px-4 md:px-16">
-  <article class="max-w-7xl md:grid md:grid-cols-2 gap-16">
+<section class="text-pillowtalk-500 py-12 md:py-16 px-4 md:px-16">
+  <article class="max-w-7xl mx-auto md:grid md:grid-cols-2 gap-16">
     <div>
-      <h2 class="font-montserrat text-heading2 font-extrabold tracking-tighter pb-12 animationinviewfade">not another solo dating app.</h2>
-      <p class="pb-6 animationinviewfade">we started Doubble, because we believe you're the best version of yourself, when you're with your friends.</p>
-      <p class="pb-6 animationinviewfade">the group chat flows more easily, when you're four people. it feels more comfortable having your friend with you. aaand it's just more fun.</p>
-      <p class="pb-8 animationinviewfade">enough talking. go try it out yourself 🍀</p>
-      <Button variant="tertiary">download app</Button>
+      <h2 class="font-montserrat text-heading2 font-extrabold tracking-tighter pb-8 md:pb-12 animationinviewfade">a new way to go out and connect.</h2>
+      <div class="md:hidden pb-8"><Image src={media} alt="girl at a party in a lavendar top" class="rounded-3xl" /></div>
+      <p class="pb-4 md:pb-6 animationinviewfade">introducing Doubble events, because meeting people should feel like making plans with friends — not scrolling through strangers.</p>
+      <p class="pb-4 md:pb-6 animationinviewfade">the vibe clicks faster when you're already going out as a group. it’s easier to chat. aaand it’s way more fun.</p>
+      <p class="pb-8 md:pb-10 animationinviewfade">enough talking. check out what’s happening.</p>
+      <Button variant="tertiary">read about events</Button>
     </div>
-    <div class="pt-8 md:pt-0"><Image src={scrollpic2} alt="pizza party" class="rounded-3xl" /></div>
+    <div class="hidden md:block pt-8 md:pt-0"><Image src={media} alt="girl at a party in a lavendar top" class="rounded-3xl h-full object-cover" /></div>
   </article>
 </section>
