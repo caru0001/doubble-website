@@ -4,7 +4,7 @@ import logo from "../assets/images/doubblelogo.svg";
 ---
 
 <section class="bg-afterhours-500 text-pillowtalk-500 font-bold">
-  <div x-data="{ showmenu: false }" class="py-4 px-4 md:px-16 static md:static w-full">
+  <div x-data="{ showmenu: false }" class="max-w-7xl mx-auto py-4 px-4 md:px-16 static md:static w-full">
     <div id="navbar" class="flex flex-row items-center justify-between">
       <div id="logo">
         <a href="/"><Image src={logo} alt="pizza party" class="w-auto h-6" /></a>
@@ -18,7 +18,7 @@ import logo from "../assets/images/doubblelogo.svg";
         </ul>
       </nav>
       <button id="burgermenu" class="md:hidden mr-4" x-on:click="showmenu = ! showmenu"
-        ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 cursor-pointer">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
         </svg>
       </button>
