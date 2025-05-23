@@ -1,5 +1,24 @@
-<section class="py-16 px-4 md:px-16 max-w-xl text-center text-pillowtalk-500 mx-auto">
-  <h2 class="font-montserrat text-display font-extrabold tracking-tighter pb-4 text-greenflag-500">96%</h2>
-  <h3 class="font-montserrat text-heading3 font-medium tracking-tighter pb-2">of Doubble Events are officially “a vibe”</h3>
-  <p>(okay, we made that up. but see if you can prove us wrong)</p>
+<section class="max-w-xl mx-auto py-12 md:py-16 px-4 md:px-16 text-pillowtalk-500 text-center">
+  <article x-data="{ count: 0, observer: null }" x-init="
+    observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        count = 0;
+        let i = setInterval(() => {
+          if (count < 96) count++;
+          else clearInterval(i);
+        }, 1500 / 96);
+      }
+    }, { threshold: 0.6 });
+    observer.observe($el);
+  " class="text-center">
+    <h2 class="font-montserrat text-display font-extrabold tracking-tighter pb-4 text-greenflag-500 animationinviewfade">
+      <span x-text="count + '%'">0%</span>
+    </h2>
+  </article>
+  <h3 class="font-montserrat text-heading3 font-bold tracking-tighter pb-2 animationinviewfade">of Doubble Events are officially “a vibe”</h3>
+  <p class="animationinviewfade">(okay, we made that up. but see if you can prove us wrong)</p>
 </section>
+
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+<!-- Number counting to 96% with the help of ChatGPT -->

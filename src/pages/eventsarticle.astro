@@ -12,15 +12,44 @@ import Relatedarticles from "../components/relatedarticles.astro";
 <MainLayout title="doubble events article">
   <section id="eventshero" class="text-pillowtalk-500 py-12 md:py-16 px-4 md:px-16 h-screen max-w-7xl mx-auto">
     <h1 class="font-montserrat text-display font-extrabold tracking-tighter pb-16 animationinviewfade">finally, <span class="italic text-firstkiss-500 font-light">Doubble Events</span> are here.</h1>
-    <p class="max-w-3xl pb-6 text-3xl animationinviewfade">say <strong>goodbye</strong> to flaky group chats and “what’s the plan?” stress and <strong>hello</strong> to Doubble Events - where real plans actually happen.</p>
-    <p class="max-w-3xl text-3xl animationinviewfade">just <strong>scroll</strong>, <strong>tap</strong>, and <strong>show up</strong>.</p>
+    <p class="max-w-3xl pb-6 text-xl md:text-3xl animationinviewfade">say <strong>goodbye</strong> to flaky group chats and “what’s the plan?” stress and <strong>hello</strong> to Doubble Events - where real plans actually happen.</p>
+    <p class="max-w-3xl text-xl md:text-3xl animationinviewfade">just <strong>scroll</strong>, <span class="font-bold animate__animated animate__flash animate__delay-1s">tap</span>, and <strong>show up</strong>.</p>
   </section>
   <Eventscards />
+  <Quote />
   <Textboxescontainer />
   <Parallaxgraphics />
   <Number />
-  <Textboxescontainer />
-  <Quote />
+
+  <section id="eventslikeapro" class="max-w-7xl mx-auto py-12 md:py-16 px-4 md:px-16">
+    <h2 class="font-montserrat text-heading2 font-extrabold tracking-tighter pb-4 text-firstkiss-500 max-w-2xl animationinviewfade">how to use Doubble Events like a pro.</h2>
+    <p class="max-w-2xl pb-8 md:pb-12 text-pillowtalk-500 animationinviewfade">want your first Doubble Event to be unforgettable (in the best way)? here are a few quick tips to kick things off right — whether you’re joining or hosting, the goal is simple: good vibes, good people, great night.</p>
+
+    <article id="stickyscrollcontainer">
+      <!-- container -->
+      <div class="bg-[url('../assets/images/27.png')] sticky top-0 left-0 right-0 bottom-0 h-screen w-full bg-cover bg-center rounded-3xl"></div>
+      <!-- sticky element -->
+      <div class="relative flex justify-end">
+        <!-- relative element -->
+        <div class="flex flex-col w-full md:w-1/2 h-full justify-center gap-4 p-4">
+          <div class="bg-greenflag-500 max-w-lg rounded-3xl px-10 py-8">
+            <h3 class="text-heading4 font-extrabold text-afterhours-500 pb-2 md:pb-4">pick the right vibe</h3>
+            <p>start with something you’d actually want to go to — a house party, concert, park hang, game night, whatever. the more "you" it feels, the more fun it’ll be.</p>
+          </div>
+
+          <div class="bg-greenflag-500 max-w-lg rounded-3xl px-10 py-8">
+            <h3 class="text-heading4 font-extrabold text-afterhours-500 pb-2 md:pb-4">you + your dream team</h3>
+            <p>bring a solid crew — 2 to 4 friends is the sweet spot. enough energy to keep things fun, not so many that you scare the other group away.</p>
+          </div>
+
+          <div class="bg-greenflag-500 max-w-lg rounded-3xl px-10 py-8">
+            <h3 class="text-heading4 font-extrabold text-afterhours-500 pb-2 md:pb-4">break the ice early</h3>
+            <p>matched with another group? drop a message! even a “what time are you guys getting there?” goes a long way. bonus points for memes or GIFs.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
   <Eventsbanner />
   <Relatedarticles />
 </MainLayout>

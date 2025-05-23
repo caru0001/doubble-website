@@ -1,12 +1,12 @@
 ---
 import { Image } from "astro:assets";
-import scrollpic2 from "../assets/images/awkward2.png";
+import eventsphone from "../assets/images/eventsphone.png";
 import Button from "../components/button.astro";
 import googleicon from "../assets/images/googleplay-icon-dark.svg";
 import appleicon from "../assets/images/apple-icon-dark.svg";
 ---
 
-<section class="text-pillowtalk-500 md:grid md:grid-cols-2 md:gap-8 py-16 px-4 md:px-16">
+<!-- <section class="text-pillowtalk-500 md:grid md:grid-cols-2 md:gap-8 py-16 px-4 md:px-16">
   <div>
     <h2 class="font-montserrat text-heading2 font-extrabold tracking-tighter pb-6 max-w-xl text-firstkiss-500">ready to turn up with your crew?</h2>
     <p class="pb-4">whether you're planning a night out or just looking for one, your next “wait, that was actually epic” event starts here.</p>
@@ -17,4 +17,18 @@ import appleicon from "../assets/images/apple-icon-dark.svg";
     </div>
   </div>
   <div class="hidden md:block"><Image src={scrollpic2} alt="pizza party" class="py-0" /></div>
+</section> -->
+<section class="text-pillowtalk-500 pt-16 md:pt-24 pb-12 md:pb-16 px-4 md:px-16 max-w-7xl mx-auto">
+  <article class="lg:grid lg:grid-cols-3 lg:gap-16">
+    <div class="col-span-2">
+      <h2 class="font-montserrat text-heading2 font-extrabold tracking-tighter pb-8 md:pb-12 text-center md:text-left animationinviewfade">ready to turn up with your crew?</h2>
+      <p class="pb-6 md:pb-10 text-body text-center md:text-left animationinviewfade max-w-3xl">whether you're planning a night out or just looking for one, your next “wait, that was actually epic” event starts here.</p>
+      <p class="pb-6 md:pb-10 text-body font-bold text-center md:text-left animationinviewfade">download the Doubble app now.</p>
+      <div class="flex flex-col md:flex-row gap-4 md:gap-6 items-center justify-center md:justify-start">
+        <Button variant="primary"> <span class="flex items-center gap-2"><Image src={googleicon} alt="google play icon" />App Store</span></Button>
+        <Button variant="primary"><span class="flex items-center gap-2"><Image src={appleicon} alt="apple icon" />Google Play</span> </Button>
+      </div>
+    </div>
+    <div class="hidden lg:block"><Image src={eventsphone} alt="pizza party" class="h-full max-h-[542px] rounded-3xl object-contain" /></div>
+  </article>
 </section>
