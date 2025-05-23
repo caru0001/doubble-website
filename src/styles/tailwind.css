@@ -36,7 +36,7 @@
   --font-montserrat: "Montserrat", sans-serif;
 
   /*Font sizes - clamp credit:@link https://utopia.fyi/clamp/calculator?a=320,1240,72—132&p=text*/
-  --text-display: clamp(4.5rem, 3.1957rem + 6.5217vw, 8.25rem);
+  --text-display: clamp(4.5rem, 3.4565rem + 5.2174vw, 7.5rem);
   --text-display--line-height: clamp(4rem, 2.913rem + 5.4348vw, 7.125rem);
   --text-heading1: clamp(3.5rem, 2.7609rem + 3.6957vw, 5.625rem);
   --text-heading1--line-height: clamp(3.5rem, 2.9783rem + 2.6087vw, 5rem);
