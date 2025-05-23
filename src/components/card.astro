@@ -1,0 +1,14 @@
+---
+const { date = "", eventname = "", eventinfo = "", cardimage = "", alttext = "" } = Astro.props;
+---
+
+<article id="eventscard" class="rounded-3xl bg-pillowtalk-500 overflow-clip">
+  <div>
+    <img src={cardimage} alt={alttext} class="object-cover" />
+    <div class="p-6 text-afterhours-500">
+      <p class="text-afterhours-400 pb-2 font-medium">{date}</p>
+      <h3 class="pb-3 text-body font-bold font-montserrat">{eventname}</h3>
+      <p>{eventinfo}</p>
+    </div>
+  </div>
+</article>
