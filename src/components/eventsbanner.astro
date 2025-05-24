@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import eventsphone from "../assets/images/eventsphone.png";
+import eventsphone from "../assets/images/mobile.png";
 import Button from "../components/button.astro";
 import googleicon from "../assets/images/googleplay-icon-dark.svg";
 import appleicon from "../assets/images/apple-icon-dark.svg";
@@ -23,12 +23,13 @@ import appleicon from "../assets/images/apple-icon-dark.svg";
     <div class="col-span-2">
       <h2 class="font-montserrat text-heading2 font-extrabold tracking-tighter pb-8 md:pb-12 text-center md:text-left animationinviewfade">ready to turn up with your crew?</h2>
       <p class="pb-6 md:pb-10 text-body text-center md:text-left animationinviewfade max-w-3xl">whether you're planning a night out or just looking for one, your next “wait, that was actually epic” event starts here.</p>
+      <div class="block md:hidden"><Image src={eventsphone} alt="pizza party" class="h-full rounded-3xl object-contain max-h-[350px] pb-6" /></div>
       <p class="pb-6 md:pb-10 text-body font-bold text-center md:text-left animationinviewfade">download the Doubble app now.</p>
       <div class="flex flex-col md:flex-row gap-4 md:gap-6 items-center justify-center md:justify-start">
         <Button variant="primary"> <span class="flex items-center gap-2"><Image src={googleicon} alt="google play icon" />App Store</span></Button>
         <Button variant="primary"><span class="flex items-center gap-2"><Image src={appleicon} alt="apple icon" />Google Play</span> </Button>
       </div>
     </div>
-    <div class="hidden lg:block"><Image src={eventsphone} alt="pizza party" class="h-full max-h-[542px] rounded-3xl object-contain" /></div>
+    <div class="hidden lg:block"><Image src={eventsphone} alt="pizza party" class="h-full rounded-3xl object-cover" /></div>
   </article>
 </section>
