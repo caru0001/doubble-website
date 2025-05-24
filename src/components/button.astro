@@ -1,5 +1,5 @@
 ---
-// getting parameters from Astro.props
+// Getting parameters from Astro.props
 const { variant = "primary" } = Astro.props;
 
 // Stylling for all buttons
@@ -13,7 +13,7 @@ const variantClasses = {
 };
 ---
 
-<!-- Sæt classes for den pågældende knap sammen ved hjælp af Astros class:list -->
+<!-- Classes for button via Astro's class:list -->
 <button class:list={[buttonStyling, variantClasses[variant]]}>
   <slot />
 </button>

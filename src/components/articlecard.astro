@@ -2,9 +2,38 @@
 const { articledate = "", articletitle = "", label = "", articlecardimage = "", alttext = "" } = Astro.props;
 import { Image } from "astro:assets";
 import calendar from "../assets/images/calendar.svg";
+const { type = "light" } = Astro.props;
+
+// Stylling for all article cards
+const articleStyling = "rounded-3xl overflow-clip";
+// Stylings for types
+const bgClasses = {
+  light: "bg-pillowtalk-500 text-afterhours-500",
+  dark: "bg-afterhours-500 text-pillowtalk-500",
+};
+const dateClasses = {
+  light: "text-firstkiss-800 font-medium pb-2",
+  dark: "text-firstkiss-500 font-medium pb-2",
+};
+
+const labelClasses = {
+  light: "text-firstkiss-800 inline-block font-medium border-2 border-firstkiss-800 px-8 py-2 rounded-3xl transition duration-300 cursor-pointer hover:bg-firstkiss-800 hover:text-pillowtalk-500",
+  dark: "text-firstkiss-500 inline-block font-medium border-2 border-firstkiss-500 px-8 py-2 rounded-3xl transition duration-300 cursor-pointer hover:bg-firstkiss-500 hover:text-afterhours-500",
+};
 ---
 
-<article id="eventscard" class="rounded-3xl bg-pillowtalk-500 overflow-clip">
+<article id="eventscard" class:list={[articleStyling, bgClasses[type]]}>
+  <div class="mb-10 md:mb-0 transition-transform duration-300 group-hover:scale-105">
+    <img src={articlecardimage} alt={alttext} class="object-cover aspect-[3/2] w-full" />
+    <div class="px-6 pt-6 pb-8">
+      <p class:list={[dateClasses[type]]}>{articledate}</p>
+      <h3 class="pb-4 text-heading4 md:text-body font-extrabold font-montserrat">{articletitle}</h3>
+      <p class:list={[labelClasses[type]]}>{label}</p>
+    </div>
+  </div>
+</article>
+
+<!-- <article id="eventscard" class="rounded-3xl bg-pillowtalk-500 overflow-clip">
   <div class="mb-10 md:mb-0 transition-transform duration-300 group-hover:scale-105">
     <img src={articlecardimage} alt={alttext} class="object-cover aspect-[3/2] w-full" />
     <div class="px-6 pt-6 pb-8 text-afterhours-500">
@@ -13,4 +42,4 @@ import calendar from "../assets/images/calendar.svg";
       <p class="text-firstkiss-800 inline-block font-medium border-2 border-firstkiss-800 px-8 py-2 rounded-3xl transition duration-300 cursor-pointer hover:bg-firstkiss-800 hover:text-pillowtalk-500">{label}</p>
     </div>
   </div>
-</article>
+</article> -->
