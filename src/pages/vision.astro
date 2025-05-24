@@ -1,9 +1,80 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import { Image } from "astro:assets";
+import visionhero from "../assets/images/visionhero.png";
+import vision1 from "../assets/images/awkward1.png";
+import vision2 from "../assets/images/awkward2.png";
+import vision3 from "../assets/images/awkward3.png";
+import Button from "../components/button.astro";
+import Banner from "../components/banner.astro";
 ---
 
-<MainLayout title="doubble's vision">
-  <section id="vision" class="text-pillowtalk-500 px-16">
-    <h1 class="text-heading1 pt-12 font-extrabold tracking-tighter text-firstkiss-500">something is <span class="font-light italic">wrong</span> with how we meet people.</h1>
+<MainLayout title="Doubble - Our Vision">
+  <section id="visionhero" class="text-pillowtalk-500 px-4 md:px-16 py-12 md:py-16 max-w-7xl mx-auto">
+    <h1 class="text-heading1 font-extrabold tracking-tighter text-firstkiss-500 animationinviewfade max-w-5xl pb-12 md:pb-16">something is <span class="font-light italic">wrong</span> with how we meet people.</h1>
+    <article class="max-w-7xl mx-auto md:grid md:grid-cols-2 gap-16">
+      <div>
+        <div class="md:hidden pb-8"><Image src={visionhero} alt="four happy girls hanging out together" class="rounded-3xl" /></div>
+        <p class="pb-4 md:pb-6 animationinviewfade">meeting new people is supposed to be exciting, spontaneous and fun. yet, dating apps turned it into a monotonous routine.</p>
+        <p class="pb-4 md:pb-6 animationinviewfade">we deserve better than that. that’s why we are creating a different experience of meeting new people.</p><p class="pb-8 md:pb-10 animationinviewfade">what if instead of playing this speed dating game by yourself, you are playing together with your friends? instead of the coffee date interview, it’s more like going to a spontaneous party with your close friends and bumping into a crush.</p>
+        <p class="pb-8 md:pb-10 animationinviewfade">try it out yourself.</p>
+        <a href="https://apps.apple.com/dk/app/doubble-dating-friends-chat/id1572234875" target="_blank" class="flex items-center justify-center md:justify-start">
+          <Button variant="primary">download app</Button>
+        </a>
+      </div>
+      <div class="hidden md:block pt-8 md:pt-0"><Image src={visionhero} alt="four happy girls hanging out together" class="rounded-3xl h-full object-cover" /></div>
+    </article>
   </section>
+
+  <section id="whydoubble" class="bg-pillowtalk-500 text-afterhours-500">
+    <article id="stagger" class="px-4 md:px-16 py-12 md:py-16 max-w-7xl mx-auto">
+      <h2 class="font-montserrat text-heading2 font-extrabold tracking-tighter pb-4 animationinviewfade">why we created Doubble.</h2>
+      <p class="max-w-2xl pb-8 md:pb-12 animationinviewfade">dating shouldn't feel like a chore — it should feel like you're out having fun with your friends. no awkward icebreakers. no solo missions. just real moments, shared with the people who know you best.</p>
+      <article class="sm:grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div class="pb-10 md:pb-0">
+          <Image src={vision3} alt="two girls dancing and smiling" class="rounded-3xl aspect-3/2 object-cover" />
+          <div class="stagger-item">
+            <h3 class="font-montserrat text-2xl font-extrabold tracking-tighter pt-3 md:pt-4 pb-2 md:pb-4 animationinviewfade">you’re not meant to date alone</h3><p class="animationinviewfade">most dating apps feel isolating — Doubble is different. we believe meeting new people should feel like a shared adventure, not a solo mission. that’s why everything on Doubble is built around you and your closest friends, so connection feels natural, not forced.</p>
+          </div>
+        </div>
+        <div class="pb-10 md:pb-0">
+          <Image src={vision1} alt="young people hanging out in a car" class="rounded-3xl aspect-3/2 object-cover" />
+          <div class="stagger-item">
+            <h3 class="font-montserrat text-2xl font-extrabold tracking-tighter pt-3 md:pt-4 pb-2 md:pb-4 animationinviewfade">we take you from awkward to effortless</h3><p class="animationinviewfade">say goodbye to interview-style dates. we’re replacing the boring coffee meetups and ghosted DMs with something more fun — like a spontaneous night out, where you and your friends cross paths with other groups looking for a vibe, not a script.</p>
+          </div>
+        </div>
+        <div class="pb-10 md:pb-0">
+          <Image src={vision2} alt="two people at a pizza party" class="rounded-3xl aspect-3/2 object-cover" />
+          <div class="stagger-item">
+            <h3 class="font-montserrat text-2xl font-extrabold tracking-tighter pt-3 md:pt-4 pb-2 md:pb-4 animationinviewfade">a fun and social way to be spontaneous</h3><p class="animationinviewfade">Doubble turns dating into something you actually want to do. no endless swiping. no pressure. just an easy way to meet new people, together with your friends, whenever you feel like it. a shared moment can become a new memory — in just a few clicks.</p>
+          </div>
+        </div>
+      </article>
+    </article>
+  </section>
+  <Banner />
 </MainLayout>
+
+<script>
+  import { animate, stagger, inView } from "motion";
+
+  // Stagger animation + return
+  inView("#stagger", () => {
+    animate(
+      ".stagger-item",
+      {
+        opacity: [0, 1],
+        transform: ["translateY(10px)", "translateY(0)"],
+      },
+      {
+        delay: stagger(0.5, { startDelay: 0.5 }),
+        duration: 0.5,
+      }
+    );
+    return () => {
+      animate(".stagger-item", {
+        opacity: [1, 0],
+      });
+    };
+  });
+</script>
