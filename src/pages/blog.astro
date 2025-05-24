@@ -1,10 +1,51 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import { Image } from "astro:assets";
+import media from "../assets/images/media.png";
+import Articlecard from "../components/articlecard.astro";
+import Banner from "../components/banner.astro";
+import Button from "../components/button.astro";
 ---
 
-<MainLayout title="doubble blog">
-  <section id="blog" class="px-16">
-    <h1 class="text-heading1 pt-12 font-extrabold tracking-tighter text-firstkiss-500">let's <span class="font-light italic">talk</span> about it.</h1>
-    <a href="/eventsarticle">link to article</a>
+<MainLayout title="Doubble - Blog">
+  <section id="blog" class="px-4 md:px-16 py-12 md:py-16 max-w-7xl mx-auto text-pillowtalk-500">
+    <h1 class="text-heading1 font-extrabold tracking-tighter text-firstkiss-500 pb-12 md:pb-16">let's <span class="font-light italic">talk</span> about it.</h1>
+
+    <h2 class="text-heading4 font-extrabold tracking-tighter pb-4">featured article</h2>
+    <a href="/eventsarticle">
+      <article id="feature" class="rounded-3xl bg-pillowtalk-500 overflow-clip mb-12 md:mb-16">
+        <div class="mb-10 md:mb-0 transition-transform duration-300 group-hover:scale-105 md:flex">
+          <div>
+            <Image src={media} alt="girl at a party in a lavendar top" class="object-cover w-full h-full" />
+          </div>
+          <div class="px-6 pt-6 pb-8 text-afterhours-500 max-w-xl">
+            <p class="text-firstkiss-800 font-medium pb-2">May 16, 2025</p>
+            <h3 class="pb-4 text-heading3 font-extrabold font-montserrat">pull up with your crew because <span class="italic font-light">Doubble events</span> are here</h3>
+            <p class="pb-6 md:pb-8">meeting new people should feel like saying yes to a spontaneous night out, not swiping through a sea of strangers. that’s why we’re launching Doubble events — a new way to connect with other groups through shared plans, parties, and experiences. now, you and your friends can explore events, join in together, and chat with other groups who are going too.</p>
+            <p class="text-firstkiss-800 inline-block font-medium border-2 border-firstkiss-800 px-8 py-2 rounded-3xl transition duration-300 cursor-pointer hover:bg-firstkiss-800 hover:text-pillowtalk-500">events</p>
+          </div>
+        </div>
+      </article>
+    </a>
+
+    <h2 class="font-montserrat text-heading2 font-extrabold tracking-tighter pb-12 animationinviewfade">things we’d tell our friends.</h2>
+    <article id="labels" class="flex gap-4 pb-8">
+      <p class="text-afterhours-500 inline-block font-medium bg-firstkiss-500 px-8 py-2 rounded-3xl transition duration-300 cursor-pointer hover:bg-firstkiss-300">all articles</p>
+      <p class="text-firstkiss-500 inline-block font-medium border-2 border-firstkiss-500 px-8 py-2 rounded-3xl transition duration-300 cursor-pointer hover:bg-firstkiss-500 hover:text-afterhours-500">dating</p>
+      <p class="text-firstkiss-500 inline-block font-medium border-2 border-firstkiss-500 px-8 py-2 rounded-3xl transition duration-300 cursor-pointer hover:bg-firstkiss-500 hover:text-afterhours-500">events</p>
+      <p class="text-firstkiss-500 inline-block font-medium border-2 border-firstkiss-500 px-8 py-2 rounded-3xl transition duration-300 cursor-pointer hover:bg-firstkiss-500 hover:text-afterhours-500">respect & trust</p>
+      <p class="text-firstkiss-500 inline-block font-medium border-2 border-firstkiss-500 px-8 py-2 rounded-3xl transition duration-300 cursor-pointer hover:bg-firstkiss-500 hover:text-afterhours-500">the app</p>
+    </article>
+
+    <article id="articles grid" class="md:grid md:grid-cols-3 gap-6 pb-12">
+      <Articlecard type="light" articlecardimage="/eventconcert.png" articledate="April 24, 2025" articletitle="why you should never date alone again" label="dating" />
+      <Articlecard type="light" articlecardimage="/eventconcert.png" articledate="April 24, 2025" articletitle="why you should never date alone again" label="dating" />
+      <Articlecard type="light" articlecardimage="/eventconcert.png" articledate="April 24, 2025" articletitle="why you should never date alone again" label="dating" />
+      <Articlecard type="light" articlecardimage="/eventconcert.png" articledate="April 24, 2025" articletitle="why you should never date alone again" label="dating" />
+      <Articlecard type="light" articlecardimage="/eventconcert.png" articledate="April 24, 2025" articletitle="why you should never date alone again" label="dating" />
+      <Articlecard type="light" articlecardimage="/eventconcert.png" articledate="April 24, 2025" articletitle="why you should never date alone again" label="dating" />
+    </article>
+    <div class="flex items-center justify-center pb-12"><Button variant="primary">load more articles</Button></div>
   </section>
+  <Banner />
 </MainLayout>
