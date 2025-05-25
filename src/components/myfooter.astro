@@ -1,35 +1,37 @@
 ---
 import { Image } from "astro:assets";
 import logopink from "../assets/images/doubblelogopink.svg";
+import facebook from "../assets/images/facebook.svg";
+import tiktok from "../assets/images/tiktok.svg";
+import instagram from "../assets/images/instagram.svg";
+import linkedin from "../assets/images/linkedin.svg";
 ---
 
 <section id="footer" class="text-pillowtalk-500 px-4 md:px-16 pt-20 pb-8 max-w-7xl mx-auto">
-  <article class="flex flex-col md:flex-row gap-12 pb-32">
+  <article class="sm:grid sm:grid-cols-4 gap-16 pb-16 md:pb-32">
+    <div class="col-span-2">
+      <Image src={logopink} alt="pink doubble logo" class="w-[280px] sm:w-auto h-auto pb-4 md:pb-2" />
+      <p class="md:text-center mb-10 font-medium">Doubble the fun</p>
+    </div>
+  
     <div>
-      <Image src={logopink} alt="pink doubble logo" class="w-[280px] md:w-auto h-auto pb-4 md:pb-2" />
-      <p class="md:text-center">Doubble the fun</p>
+      <p class="font-bold pb-3 text-body">legal</p>
+      <p class="pb-2">terms and conditions</p>
+      <p class="pb-2">privacy policy</p>
+      <p class="pb-2">respect</p>
+      <p class="mb-10">community guidelines</p>
     </div>
     <div>
-      <ul>
-        <li class="font-bold">legal</li>
-        <li>terms and conditions</li>
-        <li>privacy policy</li>
-        <li>respect</li>
-        <li>community guidelines</li>
-      </ul>
-    </div>
-    <div>
-      <ul>
-        <li class="font-bold">about</li>
-        <li>careers</li>
-      </ul>
-      <ul>
-        <li class="font-bold pt-8">social</li>
-        <li>some icons</li>
-      </ul>
+      <p class="font-bold pb-3 text-body">about</p>
+      <p class="mb-10">careers</p>
+      <p class="font-bold pb-3 text-body">social</p>
+      <div class="flex flex-wrap gap-3">
+        <Image src={facebook} alt="pink doubble logo" class="w-auto h-auto" /><Image src={tiktok} alt="pink doubble logo" class="w-auto h-auto" /><Image src={instagram} alt="pink doubble logo" class="w-auto h-auto" /><Image src={linkedin} alt="pink doubble logo" class="w-auto h-auto" />
+      </div>
     </div>
   </article>
-  <article class="text-center">
+
+  <article class="text-center text-afterhours-200">
     <p>© 2025 Doubble.</p>
     <p>designed & engineered in Copenhagen</p>
   </article>
