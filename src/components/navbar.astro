@@ -1,20 +1,22 @@
 ---
 import { Image } from "astro:assets";
 import logo from "../assets/images/doubblelogo.svg";
+import globe from "../assets/images/globe.svg";
+import arrow from "../assets/images/arrow-down.svg";
 ---
 
 <section class="bg-afterhours-500 text-pillowtalk-500 font-bold">
   <div x-data="{ showmenu: false }" class="max-w-7xl mx-auto py-4 px-4 md:px-16 static md:static w-full">
     <div id="navbar" class="flex flex-row items-center justify-between">
       <div id="logo">
-        <a href="/"><Image src={logo} alt="pizza party" class="w-auto h-6" /></a>
+        <a href="/"><Image src={logo} alt="doubble logo" class="w-auto h-6" /></a>
       </div>
       <nav id="desktopmenu" class="hidden md:block">
-        <ul class="flex flex-row gap-12 font-medium">
+        <ul class="flex flex-row gap-12 font-medium items-center">
           <li class=""><a href="/vision">Vision</a></li>
           <li class=""><a href="/blog">Blog</a></li>
           <li class=""><a href="/eventsarticle">Events</a></li>
-          <li class=""><a href="#">EN</a></li>
+          <li class="border-1 border-pillowtalk-500 px-2 py-1 rounded-3xl"><a href="#" class="flex gap-2 items-center"><Image src={globe} alt="globe icon" class="w-auto h-5" /><span class="flex items-center">EN<Image src={arrow} alt="globe icon" class="w-auto h-auto" /></span></a></li>
         </ul>
       </nav>
       <button id="burgermenu" class="md:hidden mr-4" x-on:click="showmenu = ! showmenu"
@@ -25,11 +27,11 @@ import logo from "../assets/images/doubblelogo.svg";
     </div>
     <!-- Mobile menu -->
     <nav id="mobilemenu" class="flex flex-col content-center pt-4 pr-4" x-show="showmenu" x-transition x-on:click="showmenu = false" x-on:click.outside="showmenu = false">
-      <ul>
-        <li class="text-right py-3"><a href="/vision">Vision</a></li>
-        <li class="text-right py-3"><a href="/blog">Blog</a></li>
-        <li class="text-right py-3"><a href="/eventsarticle">Events</a></li>
-        <li class="text-right py-3"><a href="#">EN</a></li>
+      <ul class="flex flex-col items-end">
+        <li class="py-3"><a href="/vision">Vision</a></li>
+        <li class="py-3"><a href="/blog">Blog</a></li>
+        <li class="py-3"><a href="/eventsarticle">Events</a></li>
+        <li class="border border-pillowtalk-500 px-2 py-1 rounded-3xl inline-block mt-6"><a href="#" class="flex gap-2 items-center"><Image src={globe} alt="globe icon" class="items-center w-auto h-4" /><span class="flex items-center">EN<Image src={arrow} alt="globe icon" class="w-auto h-auto" /></span></a></li>
       </ul>
     </nav>
   </div>
