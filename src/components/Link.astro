@@ -1,0 +1,14 @@
+---
+// Henter parametrene fra Astro.props
+const { href = "#", target = "_self" } = Astro.props;
+---
+
+<a href={href} class="underline" target={target}><slot /></a>
+
+<h1 class="font-montserrat text-display font-extrabold tracking-tighter">doubble dates are doubble the fun</h1>
+<h2 class="font-montserrat text-heading1 font-extrabold tracking-tighter">this is a heading 1</h2>
+<h3 class="font-montserrat text-heading2 font-extrabold tracking-tighter">this is a heading 2</h3>
+<h4 class="font-montserrat text-heading3 font-extrabold tracking-tighter">this is a heading 3</h4>
+<h5 class="font-montserrat text-heading4 font-extrabold">this is a heading 3</h5>
+<p class="text-body">this a body 1</p>
+<p>this a a body 2</p>
